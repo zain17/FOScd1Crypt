@@ -82,9 +82,9 @@ public class FOSJCrypt {
         String mergedPasswordAndSalt =mergePasswordAndSalt(password, salt);
         SHA512Digest digester =new  SHA512Digest();
         byte[] hash=mergedPasswordAndSalt.getBytes("UTF-8");
-                 System.out.println("1)"+Base64.encodeNoNewline(hash));
+                 System.out.println("before"+Base64.encodeNoNewline(hash));
         digester.doFinal(hash,0);
-        System.out.println("first iteration"+Base64.encodeNoNewline(hash));
+        System.out.println("after"+Base64.encodeNoNewline(hash));
         for (int i = 1; i < ITERATIONS; ++i) {           
             digester.doFinal(Bytes.concat(hash, mergedPasswordAndSalt.getBytes("UTF-8")),0);
         }      

@@ -27,7 +27,7 @@ public class Authenticator {
         else
         currentAuth=validUserPassword;
         //  Cette méthode prend l'utilisateur qui veut s'authentifier et encrypt mot de pass en claire et puis elle vérifie si la hash générer et égale au hash original
-        return FOSJCrypt.checkPassword(validUserPassword.getPassword(),password,validUserPassword.getSalt());
+        return FOScd1Crypt.checkPassword(validUserPassword.getPassword(),password,validUserPassword.getSalt());
     }
     public static void loadAuthentificators(){
         UtilisateurService useserv=new UtilisateurService();

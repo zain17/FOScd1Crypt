@@ -3,7 +3,7 @@ import com.google.common.io.BaseEncoding;
 
 
 
-//import com.google.common.primitives.Bytes;
+
 
 
 import javabc.SecureRandom;
@@ -16,7 +16,7 @@ import org.bouncycastle.crypto.digests.SHA512Digest;
 
 
 /**
- * FOSJCrypt fait le hachage et le cryptage comme le FOSUser(default encoder:Sha512) via application desktop Java.
+ * FOScd1Crypt fait le hachage et le cryptage comme le FOSUser(default encoder:Sha512) via application desktop Java.
  * La génération de salt et comme de FOSUser
  * La génération de hash et celle que FOSUser 5000 itération sur digester (une avant le boucle pour fusionner le salt avec le password) and ajout les accolades
  * Conversion
@@ -24,12 +24,12 @@ import org.bouncycastle.crypto.digests.SHA512Digest;
  * Cette API utilise le même Algorithm par défaut utiliser par FOSUser(voir security.yml encoders{algorithm})
  * @author Zain ELabidine membre de " The Optimists"
  * @Email: zainelabidine.bensaleh@esprit.tn
- *Api à télécharger:
- * 1) guava-19.0.jar
- * 2) commons-codec-1.7.jar
+ *lib à télécharger:
+ * 1) bouncy-castle-codenameone-lib(dépuis extension tool)
+ * 
  *
  */
-public class FOSJCrypt {
+public class FOScd1Crypt {
     private static final String ALGORITHM = "SHA-512";
     private static final int ITERATIONS = 5000;
     private static final int SALT_SIZE = 32;
@@ -38,7 +38,7 @@ public class FOSJCrypt {
     /**
      * Private constructor.
      */
-    private FOSJCrypt() {
+    private FOScd1Crypt() {
     }
     public static Sha512 crypt(String clairPass) {
         String gs=generateSalt();
